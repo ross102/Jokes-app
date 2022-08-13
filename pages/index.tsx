@@ -21,7 +21,7 @@ const Home: NextPage<Props> = ({data}) => {
       </Head>
        
      <div className={styles.main}>
-     <h2>Categories</h2>
+     <h2>Jokes Category</h2>
      <ul>
       {
         data && data.length > 0 ? data.map((el, i) => {

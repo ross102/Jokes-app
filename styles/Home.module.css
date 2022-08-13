@@ -5,23 +5,34 @@
 .main {
   padding: 2rem 0;
   flex: 1;
-  width: 500px;
   display: flex;
   font-size: 18px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .main ul {
   list-style-type: none;
+  display: flex;
+  width: 400px;
+  
+  flex-wrap: wrap;
 }
 
 .main ul li{
   padding: 1rem;    
   border: none;
   cursor: pointer;
+  
 }
+
+.main ul li:hover{
+   cursor: pointer;
+   color: lightskyblue;
+ 
+}
+
 
 
 .footer {
