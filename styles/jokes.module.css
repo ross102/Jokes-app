@@ -1,0 +1,18 @@
+.main {
+    padding: 2rem 0;
+    flex: 1;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .jokebtn {
+    padding: 16px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: lightcyan;
+    border: none;
+    cursor: pointer;
+  }
