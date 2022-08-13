@@ -23,16 +23,7 @@ const Navbar: NextPage = () => {
                 Jokes
             </Link>
         </li>
-        <li className={styles.navli}>
-        <div className={styles.dropdown}>
-        <Link href="#"className={styles.dropbtn}>Categories</Link>
-        <div className={styles.dropdowncontent}>
-            <Link className={router.asPath === "/" ? styles.active : ''} href="/categories">
-                Categories
-            </Link>
-        </div>
-       </div>
-        </li>
+       
        </ul>
 
      
