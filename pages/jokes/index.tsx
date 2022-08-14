@@ -2,10 +2,9 @@ import type { NextPage } from 'next'
 import { useRouter } from 'next/router';
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { JokesApiService } from '../../services'
 import styles from '../../styles/jokes.module.css'
-
+import {Back} from "../../components"
 
 interface Props {
   data: {
@@ -25,9 +24,11 @@ interface Props {
 const Jokes: NextPage<Props> = ({data}) => {
     const router = useRouter();
 
+    
+
     const refreshData = () => {
         router.replace(router.asPath);
-      }
+    }
    
   return (
     <div>
@@ -36,13 +37,16 @@ const Jokes: NextPage<Props> = ({data}) => {
         <meta name="description" content="Jokes app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-       
+      <div>
+      <Back /> 
+      </div>
      <div className={styles.main}>
-     <h2>Jokes Category</h2>
+       
+     <h2>Random jokes</h2>
      
      <p>{data.value  ? data.value : "" }</p>
      {data.value  ?
-     <button className={styles.jokebtn} onClick={refreshData}> load jokes</button> : ""
+     <button className={styles.jokebtn} onClick={refreshData}> More jokes</button> : ""
     }
      </div>    
    </div>

@@ -22,10 +22,10 @@ class JokesApi {
 
 
  //get category by name
-    getCategoryByName(name:string) {
+    getCategoryByName(name:string | undefined) {
 
-     return Jokes.get("/jokes/", { params: {
-      random: name
+     return Jokes.get("/jokes/random", { params: {
+      category: name
       }
     })
     }
