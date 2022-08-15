@@ -19,15 +19,11 @@ interface Props {
   
 }
 
-
-
 const Jokes: NextPage<Props> = ({data}) => {
     const router = useRouter();
 
-    
-
     const refreshData = () => {
-        router.replace(router.asPath);
+      router != null && router.replace(router.asPath);
     }
    
   return (
@@ -42,7 +38,7 @@ const Jokes: NextPage<Props> = ({data}) => {
       </div>
      <div className={styles.main}>
        
-     <h2>Random jokes</h2>
+     <h2 data-testid="random-jokes">Random jokes</h2>
      
      <p>{data.value  ? data.value : "" }</p>
      {data.value  ?

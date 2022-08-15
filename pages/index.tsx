@@ -20,17 +20,17 @@ const Home: NextPage<Props> = ({data}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
        
-     <div className={styles.main}>
+     <div data-testid="main-page" className={styles.main}>
      <h2>Jokes Category</h2>
      <ul>
       {
         data && data.length > 0 ? data.map((el, i) => {
           
-        return  <li key={i}> 
-         <Link  href={`/jokes/${el}`}> 
-           {el}
-         </Link>
-          </li>
+        return  <li data-testid="nav-links" key={i}> 
+                 <Link data-testid="btns" href={`/jokes/${el}`}> 
+                {el}
+                 </Link>
+               </li>
         })
         : 
         ""
@@ -45,7 +45,7 @@ const Home: NextPage<Props> = ({data}) => {
 export async function getStaticProps() {
   // get data
   try {
-   const res = await JokesApiService.getAllCategories()
+   const res = await JokesApiService.getAllCategories();
 
     return {
     props: {

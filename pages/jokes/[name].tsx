@@ -5,7 +5,6 @@ import { JokesApiService } from '../../services';
 import {Back} from "../../components";
 import styles from '../../styles/[name].module.css'
 
-
 interface Props {
     data: {
       categories: Array<string>,
@@ -20,7 +19,6 @@ interface Props {
     
   }
 
-
   export async function getStaticPaths() {
 
     const res = await JokesApiService.getAllCategories();
@@ -30,14 +28,11 @@ interface Props {
          return {
           paths: data,
           fallback: false
-        }  
-     
+        }       
   }
 
-
   export async function getStaticProps (context:GetStaticPropsContext)  {
-    const name = context.params && context.params.name as string
-    
+    const name = context.params && context.params.name as string    
   // get data
   try {
    const res = await JokesApiService.getCategoryByName(name)
@@ -67,7 +62,6 @@ interface Props {
   }
   
 }
-
 
 const CategoryName: NextPage<Props> = ({data, error}) => {
   
